@@ -2,7 +2,7 @@
 
 
 
-    class geterandseter{
+    class Moto{
         private $id;
         private $marque;
         private $modele;
@@ -20,6 +20,7 @@
         }
   
         
+
 
 
         /**
@@ -62,6 +63,25 @@
                 return $this;
         }
 
+        /**
+         * Get the value of modele
+         */ 
+        public function getModele()
+        {
+                return $this->modele;
+        }
+
+        /**
+         * Set the value of modele
+         *
+         * @return  self
+         */ 
+        public function setModele($modele)
+        {
+                $this->modele = $modele;
+
+                return $this;
+        }
 
         /**
          * Get the value of type
@@ -99,26 +119,6 @@
         public function setImage($image)
         {
                 $this->image = $image;
-
-                return $this;
-        }
-
-        /**
-         * Get the value of modele
-         */ 
-        public function getModele()
-        {
-                return $this->modele;
-        }
-
-        /**
-         * Set the value of modele
-         *
-         * @return  self
-         */ 
-        public function setModele($modele)
-        {
-                $this->modele = $modele;
 
                 return $this;
         }
