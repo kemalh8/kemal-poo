@@ -14,8 +14,7 @@ class CarController{
 
     public static $allowedFile = [
         'image/jpg',
-        'image/png',
-        'image/jpeg'
+        'image/png'
     ];
 
     public function __construct(){
@@ -90,9 +89,9 @@ class CarController{
             if(count($errors) == 0){
                 $car = new Car(null, $_POST["marque"], $_POST["modele"], $_POST["energy"], $_POST["isAuto"], null);
 
-                if($_FILES["image"]["error"] != 2){
+                if($_FILES["image"]["error"] != 4){
                     if(!in_array($_FILES["image"]['type'], self::$allowedFile)){
-                            $errors["image"] = 'Nous acceptons seulement les JPG/PNG/JPEG';
+                            $errors["image"] = 'Nous acceptons seulement les JPG/PNG';
                     }
                     if($_FILES["image"]['error'] !=0){
                         $errors["image"] = 'Une erreur s\'est produite pendant l\'upload'; //??????????
@@ -101,7 +100,7 @@ class CarController{
                         $errors["image"] = 'l\'image est trop lourde. elle doit faire moins de 2Mo';
                     }
                     if(count($errors)== 0){
-                        $filename = uniqid().explode("/",$_FILES["image"]['type'])[4]; // à revoir kemal
+                        $filename = uniqid().explode("/",$_FILES["image"]['type'])[1]; // à revoir kemal
                         move_uploaded_file($_FILES["image"]['tmp_name'], 'image/img/'.$filename);
                         $car->setImage($filename);
                     }
