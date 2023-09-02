@@ -21,7 +21,7 @@
             </div>
             //
             <div class="col-md-12 mt-2">
-                    <label for="modele">Model</label>
+                    <label for="modele">Modele</label>
                     <input class="form-control 
                     <?php if(array_key_exists("modele", $errors)){echo('is-invalid');}?>"
                        value=" <?php if(array_key_exists("modele", $_POST)){echo($_POST["modele"]);}?>"
@@ -37,7 +37,7 @@
             </div>
 
             <div class="col-md-12 mt-2">
-                <label for="energy">Energy</label>
+                <label for="energy">Energie</label>
                 <select class="form-select" id="energy" name="energy">
                     <?php if(array_key_exists("energy", $errors)){echo('is-invalid');}?>"
 

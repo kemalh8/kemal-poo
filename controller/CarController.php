@@ -22,9 +22,10 @@ class CarController{
           $this->carManager = new CarManager();
     }
 
+
     public function list(){
         $cars = $this->carManager->getAll();
-
+        //var_dump($cars);
         require 'view/cars/list.php';
     }
 
