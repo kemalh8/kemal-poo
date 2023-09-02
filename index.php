@@ -4,7 +4,7 @@
 
     if(!array_key_exists("controller", $_GET) &&
         !array_key_exists("action", $_GET)){
-            header('Location: index.php?controller=default&action=home');
+       header('Location: index.php?controller=default&action=home');
     }
     /* si je n'ai pas de clé controller dans mes variables $GET 
         ou que je n'ai pas actions dans mes variables $GET, 
@@ -58,9 +58,9 @@
     }
 
     if(is_null($actionFind)){
-        header("location: index.php?controller=defaulf&action=not-found");
+        header("location: index.php?controller=default&action=not-found");
+        die();
     }
-
 
     $object = new CarManager(); 
     $object->getAll();
