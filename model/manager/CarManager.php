@@ -52,5 +52,4 @@ class CarManager extends DbManager{
         $query->execute();
     }
 }
-
 ?>
