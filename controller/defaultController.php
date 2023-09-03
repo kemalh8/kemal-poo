@@ -3,7 +3,6 @@
     class DefaultController{
 
         public function home(){
-
             require 'view/home.php';
         }
         
@@ -11,7 +10,7 @@
             http_response_code(404);
             require 'view/errors/404.php';
         }
-       
+
     } 
 ?>
 
